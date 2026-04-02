@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Did We Do? – Peak Energy</title>
+<!-- Open Graph for rich text/iMessage preview -->
+<meta property="og:title" content="How did we do? – Peak Energy, Inc.">
+<meta property="og:description" content="Share your experience. It only takes a minute.">
+<meta property="og:url" content="https://peakenergync.com/review">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f5f2ed;
+    --card: #ffffff;
+    --navy: #12243a;
+    --navy-soft: #1e3a57;
+    --teal: #0e8c9e;
+    --teal-light: #e8f6f8;
+    --gold: #e8a020;
+    --muted: #7a8d9a;
+    --border: #e2ddd6;
+    --text: #1a2b3a;
+  }
+  body {
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    padding: 1.5rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.75rem 2.25rem 2.25rem;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 48px rgba(18,36,58,0.1), 0 2px 8px rgba(18,36,58,0.06);
+    position: relative;
+    overflow: hidden;
+    animation: rise 0.6s cubic-bezier(0.22,1,0.36,1) both;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+  }
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.25rem;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 5vw, 1.9rem);
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+  }
+  h1 em { font-style: italic; color: var(--teal); }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+  /* Stars */
+  .stars-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .star {
+    font-size: 2.4rem;
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.12s, transform 0.12s;
+    user-select: none;
+    line-height: 1;
+  }
+  .star.hover  { color: var(--gold); transform: scale(1.18); }
+  .star.lit    { color: var(--gold); }
+  .star.locked { color: var(--gold); transform: scale(1.1); filter: drop-shadow(0 2px 6px rgba(232,160,32,0.5)); }
+  .star-hint {
+    font-size: 0.78rem;
+    color: var(--muted);
+    min-height: 1.2em;
+    margin-bottom: 1.75rem;
+    transition: opacity 0.2s;
+  }
+  /* Panels */
+  .panel { display: none; animation: fadeIn 0.35s ease both; }
+  .panel.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  /* Happy panel */
+  .happy-msg {
+    background: var(--teal-light);
+    border: 1px solid rgba(14,140,158,0.2);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.88rem;
+    color: var(--navy-soft);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: var(--teal);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    padding: 0.9rem 1.5rem;
+    border-radius: 10px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(14,140,158,0.3);
+    width: 100%;
+  }
+  .btn-google:hover {
+    background: #0a7a8a;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(14,140,158,0.4);
+  }
+  .btn-google svg { width: 18px; height: 18px; flex-shrink: 0; }
+  /* Sad panel */
+  .sad-msg {
+    background: #fdf6f5;
+    border: 1px solid #f0d5d2;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.88rem;
+    color: #6b3530;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .feedback-form { text-align: left; }
+  .feedback-form label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+  }
+  .feedback-form input,
+  .feedback-form textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: #fafaf9;
+    margin-bottom: 1rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    outline: none;
+    resize: vertical;
+  }
+  .feedback-form input:focus,
+  .feedback-form textarea:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(14,140,158,0.1);
+  }
+  .feedback-form textarea { min-height: 100px; }
+  .btn-send {
+    width: 100%;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.9rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-send:hover { background: var(--navy-soft); transform: translateY(-1px); }
+  .btn-send:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  /* Thank-you panel */
+  .thankyou-icon { font-size: 2.8rem; margin-bottom: 0.75rem; }
+  .thankyou-panel h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .thankyou-panel p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+  .card-footer {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.72rem;
+    color: #b0bec5;
+    letter-spacing: 0.04em;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <p class="eyebrow">Peak Energy, Inc.</p>
+  <h1>How did we do<br><em>for you?</em></h1>
+  <p class="subtitle">Tap a star to rate your experience.</p>
+  <div class="stars-row" id="starsRow">
+    <span class="star" data-v="1">★</span>
+    <span class="star" data-v="2">★</span>
+    <span class="star" data-v="3">★</span>
+    <span class="star" data-v="4">★</span>
+    <span class="star" data-v="5">★</span>
+  </div>
+  <p class="star-hint" id="starHint">&nbsp;</p>
+  <!-- 4–5 stars: send to Google -->
+  <div class="panel" id="panelHappy">
+    <div class="happy-msg">
+      Glad to hear it. A quick Google review helps other homeowners in the Triangle find us when they need real help.
+    </div>
+    <a class="btn-google" href="https://g.page/r/CWuEqJDHaN8OEBE/review" target="_blank" id="googleBtn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#fff"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#fff"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#fff"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#fff"/>
+      </svg>
+      Leave a Google Review
+    </a>
+  </div>
+  <!-- 1–3 stars: private feedback form -->
+  <div class="panel" id="panelSad">
+    <div class="sad-msg">
+      We're sorry your experience fell short. Tell us what happened and we'll follow up directly.
+    </div>
+    <form class="feedback-form" id="feedbackForm">
+      <label for="fname">Your name</label>
+      <input type="text" id="fname" placeholder="First name is fine" autocomplete="name">
+      <label for="fcontact">Best way to reach you (optional)</label>
+      <input type="text" id="fcontact" placeholder="Phone or email" autocomplete="tel">
+      <label for="fmsg">What happened?</label>
+      <textarea id="fmsg" placeholder="Tell us what we could have done better..." required></textarea>
+      <button type="submit" class="btn-send" id="sendBtn">Send Feedback</button>
+    </form>
+  </div>
+  <!-- Thank-you (both paths) -->
+  <div class="panel" id="panelThanks">
+    <div class="thankyou-icon" id="thanksIcon">🙏</div>
+    <div class="thankyou-panel">
+      <h2 id="thanksTitle">Thank you</h2>
+      <p id="thanksMsg">We received your feedback and will be in touch. We take every job seriously and appreciate you letting us know.</p>
+    </div>
+  </div>
+  <p class="card-footer">Peak Energy, Inc. · Holly Springs, NC · peakenergync.com</p>
+</div>
+<script>
+  const hints = ['', 'We want to hear more.', 'We want to hear more.', 'Thanks for your honesty.', 'Great to hear.', 'That means a lot.'];
+  const stars = document.querySelectorAll('.star');
+  const hintEl = document.getElementById('starHint');
+  let selected = 0;
+  let locked = false;
+  function showPanel(id) {
+    ['panelHappy','panelSad','panelThanks'].forEach(pid =>
+      document.getElementById(pid).classList.remove('active')
+    );
+    if (id) document.getElementById(id).classList.add('active');
+  }
+  stars.forEach(star => {
+    star.addEventListener('mouseenter', () => {
+      if (locked) return;
+      const v = +star.dataset.v;
+      stars.forEach(s => s.classList.toggle('hover', +s.dataset.v <= v));
+      hintEl.textContent = hints[v] || '\u00a0';
+    });
+    star.addEventListener('mouseleave', () => {
+      if (locked) return;
+      stars.forEach(s => s.classList.remove('hover'));
+      hintEl.textContent = '\u00a0';
+    });
+    star.addEventListener('click', () => {
+      selected = +star.dataset.v;
+      locked = true;
+      stars.forEach(s => {
+        s.classList.remove('hover', 'lit');
+        s.classList.toggle('locked', +s.dataset.v <= selected);
+      });
+      hintEl.textContent = hints[selected];
+      setTimeout(() => {
+        showPanel(selected >= 4 ? 'panelHappy' : 'panelSad');
+      }, 250);
+    });
+  });
+  // Google button: show thanks after redirect
+  document.getElementById('googleBtn').addEventListener('click', () => {
+    setTimeout(() => {
+      document.getElementById('thanksIcon').textContent = '⭐';
+      document.getElementById('thanksTitle').textContent = 'Thank you';
+      document.getElementById('thanksMsg').textContent = 'Your review helps other homeowners find us. We really appreciate it.';
+      showPanel('panelThanks');
+    }, 600);
+  });
+  // Feedback form submission
+  // To make this actually email you, sign up free at https://formspree.io
+  // Create a form pointing to service@peakenergync.com, then replace YOUR_FORM_ID below.
+  document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('sendBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    const name    = document.getElementById('fname').value;
+    const contact = document.getElementById('fcontact').value;
+    const message = document.getElementById('fmsg').value;
+    const FORMSPREE_ID = 'YOUR_FORM_ID'; // ← replace this
+    let sent = false;
+    if (FORMSPREE_ID !== 'YOUR_FORM_ID') {
+      try {
+        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ name, contact, message, rating: `${selected} star(s)` })
+        });
+        if (res.ok) sent = true;
+      } catch(err) {}
+    }
+    // Fallback: open mailto if Formspree not yet set up
+    if (!sent) {
+      const subject = encodeURIComponent(`Peak Energy Feedback – ${selected} star(s)`);
+      const body    = encodeURIComponent(`Name: ${name}\nContact: ${contact}\nRating: ${selected} star(s)\n\nFeedback:\n${message}`);
+      window.location.href = `mailto:service@peakenergync.com?subject=${subject}&body=${body}`;
+    }
+    document.getElementById('thanksIcon').textContent = '🙏';
+    document.getElementById('thanksTitle').textContent = 'Thank you';
+    document.getElementById('thanksMsg').textContent = 'We received your message and will follow up with you directly.';
+    showPanel('panelThanks');
+  });
+</script>
+</body>
+</html>
