@@ -1,18 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How Did We Do? – Peak Energy</title>
-<meta property="og:title" content="How did we do? – Peak Energy, Inc.">
+<title>How Did We Do? &#8211; Peak Energy</title>
+<meta property="og:title" content="How did we do? &#8211; Peak Energy, Inc.">
 <meta property="og:description" content="Share your experience. It only takes a minute.">
 <meta property="og:url" content="https://peakenergync.github.io/google-review/">
 <meta property="og:type" content="website">
-      <meta property="og:image" content="https://peakenergync.github.io/google-review/preview.png">
+<meta property="og:image" content="https://peakenergync.github.io/google-review/preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:image" content="https://peakenergync.github.io/google-review/preview.png">
+<meta name="twitter:image" content="https://peakenergync.github.io/google-review/preview.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -51,7 +51,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── Card ─────────────────────────────────── */
   .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -71,7 +70,6 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* Blue top accent bar */
   .card::before {
     content: '';
     position: absolute;
@@ -80,26 +78,15 @@
     background: linear-gradient(90deg, var(--primary) 60%, var(--accent));
   }
 
-  /* ── Header ───────────────────────────────── */
   .logo-bar {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
     margin-bottom: 1.25rem;
   }
-  .logo-bar svg {
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0;
-  }
-  .logo-bar span {
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--primary);
+  .logo-bar img {
+    max-width: 200px;
+    height: auto;
   }
 
   .card-title {
@@ -125,7 +112,6 @@
     margin: 0 0 1.5rem;
   }
 
-  /* ── Star prompt ──────────────────────────── */
   .star-prompt {
     font-family: var(--font-heading);
     font-size: 0.72rem;
@@ -136,7 +122,6 @@
     margin-bottom: 1rem;
   }
 
-  /* ── Stars ────────────────────────────────── */
   .stars-row {
     display: flex;
     justify-content: center;
@@ -171,7 +156,6 @@
     font-style: italic;
   }
 
-  /* ── Panels ───────────────────────────────── */
   .panel { display: none; animation: fadeIn 0.3s ease both; }
   .panel.active { display: block; }
 
@@ -180,7 +164,6 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── Happy panel (4–5 stars) ──────────────── */
   .happy-msg {
     background: var(--success-bg);
     border: 1px solid var(--success-border);
@@ -234,7 +217,6 @@
     font-style: italic;
   }
 
-  /* ── Sad panel (1–3 stars) ────────────────── */
   .sad-msg {
     background: var(--accent-light);
     border: 1px solid var(--accent-border);
@@ -299,7 +281,6 @@
   .btn-send:hover { background: var(--primary-dark); transform: translateY(-1px); }
   .btn-send:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
-  /* ── Thank-you panel ──────────────────────── */
   .thankyou-icon { font-size: 2.6rem; margin-bottom: 0.75rem; }
   .thankyou-panel h2 {
     font-family: var(--font-heading);
@@ -313,7 +294,6 @@
     line-height: 1.65;
   }
 
-  /* ── Footer ───────────────────────────────── */
   .card-footer {
     margin-top: 2rem;
     padding-top: 1.25rem;
@@ -332,14 +312,9 @@
 <body>
 <div class="card">
 
-  <!-- Logo bar -->
+  <!-- Logo -->
   <div class="logo-bar">
-    <!-- Peak Energy sun/bolt icon -->
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="16" cy="16" r="15" fill="#003876"/>
-      <polygon points="16,5 20,14 28,12 18,20 22,28 13,20 5,23 14,15 10,7" fill="#e1962f"/>
-    </svg>
-    <span>Peak Energy, Inc.</span>
+    <img src="peak-energy-logo.jpg" alt="Peak Energy, Inc. &#8211; Home Comfort. Energy Efficiency.">
   </div>
 
   <h1 class="card-title">Thank you for choosing us.</h1>
@@ -347,18 +322,16 @@
 
   <div class="divider"></div>
 
-  <!-- Stars -->
   <p class="star-prompt">How did we do?</p>
   <div class="stars-row" id="starsRow">
-    <span class="star" data-v="1">★</span>
-    <span class="star" data-v="2">★</span>
-    <span class="star" data-v="3">★</span>
-    <span class="star" data-v="4">★</span>
-    <span class="star" data-v="5">★</span>
+    <span class="star" data-v="1">&#9733;</span>
+    <span class="star" data-v="2">&#9733;</span>
+    <span class="star" data-v="3">&#9733;</span>
+    <span class="star" data-v="4">&#9733;</span>
+    <span class="star" data-v="5">&#9733;</span>
   </div>
   <p class="star-hint" id="starHint">&nbsp;</p>
 
-  <!-- 4–5 stars: Google review -->
   <div class="panel" id="panelHappy">
     <div class="happy-msg">
       <strong>We're glad to hear it.</strong>
@@ -373,13 +346,12 @@
       </svg>
       Leave a Google Review
     </a>
-    <p class="google-nudge">Opens Google — takes about 30 seconds.</p>
+    <p class="google-nudge">Opens Google &#8212; takes about 30 seconds.</p>
   </div>
 
-  <!-- 1–3 stars: private feedback form -->
   <div class="panel" id="panelSad">
     <div class="sad-msg">
-      We're sorry your experience fell short. Tell us what happened and we'll follow up with you directly — we want to make it right.
+      We're sorry your experience fell short. Tell us what happened and we'll follow up with you directly &#8212; we want to make it right.
     </div>
     <form class="feedback-form" id="feedbackForm">
       <label for="fname">Your name</label>
@@ -392,9 +364,8 @@
     </form>
   </div>
 
-  <!-- Thank-you (both paths) -->
   <div class="panel" id="panelThanks">
-    <div class="thankyou-icon" id="thanksIcon">🙏</div>
+    <div class="thankyou-icon" id="thanksIcon">&#128591;</div>
     <div class="thankyou-panel">
       <h2 id="thanksTitle">Thank you</h2>
       <p id="thanksMsg">We appreciate you taking the time. Every piece of feedback helps us do better.</p>
@@ -405,12 +376,11 @@
 </div>
 
 <script>
-  // ─── State ───────────────────────────────────────────────────────────
   let selected    = 0;
   let minAllow    = 1;
   let fullyLocked = false;
 
-  const hints = ['', 'We want to hear about it.', 'We want to hear about it.', 'Thanks for the honest feedback.', 'Great to hear.', 'That means a lot — thank you.'];
+  const hints = ['', 'We want to hear about it.', 'We want to hear about it.', 'Thanks for the honest feedback.', 'Great to hear.', 'That means a lot &#8212; thank you.'];
   const stars = Array.from(document.querySelectorAll('.star'));
   const hintEl = document.getElementById('starHint');
 
@@ -435,7 +405,6 @@
     if (id) document.getElementById(id).classList.add('active');
   }
 
-  // ─── Hover ───────────────────────────────────────────────────────────
   stars.forEach(star => {
     star.addEventListener('mouseenter', () => {
       if (fullyLocked) return;
@@ -454,7 +423,6 @@
       hintEl.textContent = '\u00a0';
     });
 
-    // ─── Click ───────────────────────────────────────────────────────
     star.addEventListener('click', () => {
       if (fullyLocked) return;
       const v = +star.dataset.v;
@@ -485,22 +453,20 @@
     });
   });
 
-  // ─── Google button — show thanks after redirect ────────────────────
   document.getElementById('googleBtn').addEventListener('click', () => {
     setTimeout(() => {
-      document.getElementById('thanksIcon').textContent = '⭐';
+      document.getElementById('thanksIcon').textContent = '\u2B50';
       document.getElementById('thanksTitle').textContent = 'Thank you';
       document.getElementById('thanksMsg').textContent = 'Your review means a lot to us and helps other homeowners in the Triangle find a contractor they can trust.';
       showPanel('panelThanks');
     }, 700);
   });
 
-  // ─── Feedback form submission ─────────────────────────────────────
   document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = document.getElementById('sendBtn');
     btn.disabled = true;
-    btn.textContent = 'Sending…';
+    btn.textContent = 'Sending\u2026';
 
     const name    = document.getElementById('fname').value;
     const contact = document.getElementById('fcontact').value;
@@ -510,22 +476,22 @@
     let sent = false;
     if (FORMSPREE_ID !== 'YOUR_FORM_ID') {
       try {
-        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ name, contact, message, rating: `${selected} star(s)` })
+          body: JSON.stringify({ name, contact, message, rating: selected + ' star(s)' })
         });
         if (res.ok) sent = true;
       } catch(err) {}
     }
 
     if (!sent) {
-      const subject = encodeURIComponent(`Peak Energy Feedback – ${selected} star(s)`);
-      const body    = encodeURIComponent(`Name: ${name}\nContact: ${contact}\nRating: ${selected} star(s)\n\nFeedback:\n${message}`);
-      window.location.href = `mailto:service@peakenergync.com?subject=${subject}&body=${body}`;
+      const subject = encodeURIComponent('Peak Energy Feedback \u2013 ' + selected + ' star(s)');
+      const body    = encodeURIComponent('Name: ' + name + '\nContact: ' + contact + '\nRating: ' + selected + ' star(s)\n\nFeedback:\n' + message);
+      window.location.href = 'mailto:service@peakenergync.com?subject=' + subject + '&body=' + body;
     }
 
-    document.getElementById('thanksIcon').textContent = '🙏';
+    document.getElementById('thanksIcon').textContent = '\uD83D\uDE4F';
     document.getElementById('thanksTitle').textContent = 'Thank you';
     document.getElementById('thanksMsg').textContent = 'We received your message and will follow up with you directly.';
     showPanel('panelThanks');
