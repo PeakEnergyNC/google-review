@@ -70,14 +70,6 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, var(--primary) 60%, var(--accent));
-  }
-
   .logo-bar {
     display: flex;
     align-items: center;
@@ -372,7 +364,7 @@
     </div>
   </div>
 
-  <p class="card-footer">Peak Energy, Inc. · Holly Springs, NC · <a href="https://peakenergync.com" target="_blank">peakenergync.com</a></p>
+  <p class="card-footer">Peak Energy, Inc. Â· Holly Springs, NC Â· <a href="https://peakenergync.com" target="_blank">peakenergync.com</a></p>
 </div>
 
 <script>
@@ -380,7 +372,7 @@
   let minAllow    = 1;
   let fullyLocked = false;
 
-  const hints = ['', 'We want to hear about it.', 'We want to hear about it.', 'Thanks for the honest feedback.', 'Great to hear.', 'That means a lot &#8212; thank you.'];
+  const hints = ['', 'We want to hear about it.', 'We want to hear about it.', 'Thanks for the honest feedback.', 'Great to hear.', 'That means a lot \u2014 thank you.'];
   const stars = Array.from(document.querySelectorAll('.star'));
   const hintEl = document.getElementById('starHint');
 
